@@ -3,3 +3,4 @@
 source 'https://rubygems.org'
 
 gem 'puma'
+gem 'sqlite3', '~> 2.9'
