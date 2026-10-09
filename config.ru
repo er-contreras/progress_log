@@ -1,15 +1,5 @@
-# frozen_string_literal: true
+rack_app = lambda do |env|
+  [200, { 'content-type' => 'text/plain' }, ['Hello World']]
+end
 
-require 'rack'
-
-status = 200
-
-html_content = File.read('index.html')
-body = [html_content]
-
-headers = {
-  'Content-Type' => 'text/html',
-  'Content-length' => html_content.bytesize.to_s
-}
-
-run ->(_) { [status, headers, body] }
+run rack_app
